@@ -14,7 +14,7 @@ const About: FC = () => {
             забронювати квитки на найбільш актуальні сеанси в кінотеатрах.
           </p>
         </div>
-        <div className="bg-white flex-1  h-full px-[10px] py-[15px]  rounded-lg shadow-lg">
+        <div className="bg-white w-full flex-1  h-full px-[10px] py-[15px]  rounded-lg shadow-lg">
           <p className="font-bold text-[22px] text-start w-full">
             Зручний процес реєстрації та бронювання{" "}
           </p>
@@ -24,7 +24,7 @@ const About: FC = () => {
             кілька кліків забронювати квиток на будь-який фільм.
           </p>
         </div>
-        <div className="bg-white flex-1  h-full px-[10px] py-[15px]  rounded-lg shadow-lg">
+        <div className="bg-white w-full flex-1  h-full px-[10px] py-[15px]  rounded-lg shadow-lg">
           <p className="font-bold text-[22px] text-start w-full">
             Інтерактивний сервіс
           </p>
@@ -34,7 +34,7 @@ const About: FC = () => {
             сеанси за зручним часом.
           </p>
         </div>
-        <div className="bg-white flex-1  h-full px-[10px] py-[15px]  rounded-lg shadow-lg">
+        <div className="bg-white w-full flex-1  h-full px-[10px] py-[15px]  rounded-lg shadow-lg">
           <p className="font-bold text-[22px] text-start w-full">
             Команда професіоналів
           </p>
@@ -45,7 +45,7 @@ const About: FC = () => {
           </p>
         </div>
         <div className="bg-white flex-1 w-full h-full px-[10px] py-[15px]  rounded-lg shadow-lg">
-          <p className="font-bold text-[22px] text-start w-full">
+          <p className="font-bold text-[22px] text-start">
             Безпека та конфіденційність
           </p>
           <p className="font-semibold text-[16px]">
