@@ -12,6 +12,7 @@ module.exports = {
       padding: {
         lg: "20px",
         xl: "0px",
+        "2xl": "0px",
       },
     },
   },
