@@ -2,7 +2,7 @@ import axios from "axios";
 import { trimQuotes } from "./trim-quotes";
 
 export const authApi = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "http://localhost:8000/api",
 });
 
 authApi.interceptors.request.use(

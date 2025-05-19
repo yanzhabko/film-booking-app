@@ -2,20 +2,25 @@ from . import models, database
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import auth, movies, bookings, profile
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 
 models.Base.metadata.create_all(bind=database.engine)
 
-app = FastAPI(port=8000)
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['http://localhost:5173'],
+    allow_origins=['*'],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-@app.get("/")
+frontend_path = Path(__file__).resolve().parent.parent / "frontend" / "dist"
+app.mount("/", StaticFiles(directory=frontend_path, html=True), name="static")
+
+@app.get("/api")
 def server():
     return 'server run!'
 
