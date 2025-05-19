@@ -18,7 +18,7 @@ const CreateSessionModal: FC<ModalProps> = ({ onClose, isOpen }) => {
   const { mutateAsync } = useMutation(
     "movies",
     async (data: CreateSessions) => {
-      const response = await authApi.post("movies", data);
+      const response = await authApi.post("/movies", data);
       return response;
     }
   );
