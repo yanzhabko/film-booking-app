@@ -21,9 +21,9 @@ app.add_middleware(
 def server():
     return 'server run!'
 
-app.include_router(auth.router, prefix="/auth", tags=["Auth"])
-app.include_router(movies.router, prefix="/movies", tags=["Movies"])
-app.include_router(bookings.router, prefix="/bookings", tags=["Bookings"])
-app.include_router(profile.router, prefix="/profile", tags=["Profile"])
+app.include_router(auth.router, prefix="/api/auth", tags=["Auth"])
+app.include_router(movies.router, prefix="/api/movies", tags=["Movies"])
+app.include_router(bookings.router, prefix="/api/bookings", tags=["Bookings"])
+app.include_router(profile.router, prefix="/api/profile", tags=["Profile"])
 
 app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
