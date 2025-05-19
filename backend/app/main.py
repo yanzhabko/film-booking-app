@@ -5,7 +5,7 @@ from app.routes import auth, movies, bookings, profile
 
 models.Base.metadata.create_all(bind=database.engine)
 
-app = FastAPI()
+app = FastAPI(port=8000)
 
 app.add_middleware(
     CORSMiddleware,
