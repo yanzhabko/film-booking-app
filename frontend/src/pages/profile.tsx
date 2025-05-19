@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 const Profile: FC = () => {
   const client = useQueryClient();
   const { data } = useQuery("profile", async () => {
-    const response = await authApi.get<Booking[]>("profile");
+    const response = await authApi.get<Booking[]>("/profile/");
     return response.data;
   });
 
@@ -16,7 +16,7 @@ const Profile: FC = () => {
     "cancel_booking",
     async (movieId: number) => {
       const response = await authApi.delete(
-        `bookings/cancel_booking/${movieId}`
+        `/bookings/cancel_booking/${movieId}`
       );
       client.refetchQueries("cancel_booking");
       client.refetchQueries("bookings");
