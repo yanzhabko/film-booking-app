@@ -27,9 +27,9 @@ app.include_router(movies.router, prefix="/movies", tags=["Movies"])
 app.include_router(bookings.router, prefix="/bookings", tags=["Bookings"])
 app.include_router(profile.router, prefix="/profile", tags=["Profile"])
 
-dist_path = Path(__file__).resolve().parent.parent / "frontend" / "dist"
+dist_path = Path(__file__).resolve().parents[2] / "frontend" / "dist"
 
-app.mount("/assets", StaticFiles(directory=dist_path, html=True), name="static")
+app.mount("/", StaticFiles(directory=dist_path, html=True), name="static")
 
 
 @app.get("/{full_path:path}")
