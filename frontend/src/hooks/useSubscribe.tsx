@@ -4,7 +4,7 @@ import { authApi } from "../utils/store";
 export const useSubscribe = () =>
   useQuery("registered-events", async () => {
     const response = await authApi.get(
-      "http://localhost:8000/bookings/user_book/"
+      "https://film-booking-app.onrender.com/bookings/user_book/"
     );
     return response;
   });
