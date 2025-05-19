@@ -36,7 +36,7 @@ const Home: FC = () => {
   const { mutateAsync: registerUser } = useMutation(
     "book_movie",
     async (movieId: number) => {
-      const response = await authApi.post(`/bookings/book_movie/${movieId}`);
+      const response = await authApi.post(`/bookings/book_movie/${movieId}/`);
       client.refetchQueries("book_movie");
       client.refetchQueries("bookings");
       return response;

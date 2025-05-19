@@ -30,7 +30,7 @@ const UpdateSessionModal: FC<UpdateSessionModal> = ({
   });
 
   const { mutateAsync } = useMutation("movies", async (data: UpdateFilm) => {
-    const response = await authApi.put("/movies/" + activeId + "/", data);
+    const response = await authApi.put("/movies/" + activeId, data);
     return response;
   });
 
