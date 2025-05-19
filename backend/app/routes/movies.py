@@ -7,7 +7,7 @@ from app.auth import get_current_admin
 
 router = APIRouter()
 
-@router.post("/all", response_model=MovieResponse)
+@router.post("/", response_model=MovieResponse)
 def create_movie(movie: MovieCreate, db: Session = Depends(get_db)):
     new_movie = Movie(**movie.dict())
     db.add(new_movie)
