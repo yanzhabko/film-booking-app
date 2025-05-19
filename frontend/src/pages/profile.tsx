@@ -20,12 +20,8 @@ const Profile: FC = () => {
       );
       client.refetchQueries("cancel_booking");
       client.refetchQueries("bookings");
+      client.refetchQueries("profile");
       return response;
-    },
-    {
-      onSuccess: () => {
-        client.invalidateQueries("profile");
-      },
     }
   );
 
