@@ -31,7 +31,7 @@ app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="stati
 
 @app.get("/{full_path:path}")
 async def serve_vue_app(full_path: str):
-    index_file = dist_path / "index.html"
+    index_file = "../frontend/dist" / "index.html"
     if index_file.exists():
         return FileResponse(index_file)
     return {"detail": "index.html not found"}
