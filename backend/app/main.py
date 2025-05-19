@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import auth, movies, bookings, profile
 from fastapi.staticfiles import StaticFiles
-from pathlib import Path
+from fastapi.responses import FileResponse
 
 models.Base.metadata.create_all(bind=database.engine)
 
@@ -27,3 +27,11 @@ app.include_router(bookings.router, prefix="/bookings", tags=["Bookings"])
 app.include_router(profile.router, prefix="/profile", tags=["Profile"])
 
 app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
+
+
+@app.get("/{full_path:path}")
+async def serve_vue_app(full_path: str):
+    index_file = dist_path / "index.html"
+    if index_file.exists():
+        return FileResponse(index_file)
+    return {"detail": "index.html not found"}
