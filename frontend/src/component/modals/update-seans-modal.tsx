@@ -25,12 +25,12 @@ const UpdateSessionModal: FC<UpdateSessionModal> = ({
   const client = useQueryClient();
   const { data: film } = useQuery(["bookings", activeId], async () => {
     if (activeId === null) return null;
-    const response = await authApi.get(`/movies/${activeId}`);
+    const response = await authApi.get(`/movies/${activeId}/`);
     return response.data;
   });
 
   const { mutateAsync } = useMutation("movies", async (data: UpdateFilm) => {
-    const response = await authApi.put("/movies/" + activeId, data);
+    const response = await authApi.put("/movies/" + activeId + "/", data);
     return response;
   });
 
