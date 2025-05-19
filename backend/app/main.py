@@ -17,8 +17,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-frontend_path = Path(__file__).resolve().parent.parent / "frontend" / "dist"
-app.mount("/", StaticFiles(directory=frontend_path, html=True), name="static")
+
+app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
 
 @app.get("/api")
 def server():
