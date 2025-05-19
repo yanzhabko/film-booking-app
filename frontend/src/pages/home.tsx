@@ -20,7 +20,7 @@ const Home: FC = () => {
   const { data: subscribe } = useSubscribe();
 
   const { data } = useQuery("movies", async () => {
-    const response = await api.get<Film[]>("movies");
+    const response = await api.get<Film[]>("/movies");
     return response;
   });
 
