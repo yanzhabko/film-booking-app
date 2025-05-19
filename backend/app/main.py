@@ -26,7 +26,7 @@ app.include_router(movies.router, prefix="/movies", tags=["Movies"])
 app.include_router(bookings.router, prefix="/bookings", tags=["Bookings"])
 app.include_router(profile.router, prefix="/profile", tags=["Profile"])
 
-app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
+app.mount("/assets", StaticFiles(directory="../frontend/dist", html=True), name="static")
 
 
 @app.get("/{full_path:path}")
