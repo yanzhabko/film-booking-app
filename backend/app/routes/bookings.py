@@ -6,7 +6,7 @@ from app.auth import get_current_user
 
 router = APIRouter()
 
-@router.post("/book_movie/{movie_id}")
+@router.post("/{movie_id}")
 def book_movie(movie_id: int, db: Session = Depends(get_db), current_user=Depends(get_current_user)):
     existing_booking = db.query(Booking).filter(
         Booking.movie_id == movie_id,
